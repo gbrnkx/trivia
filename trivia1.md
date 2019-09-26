@@ -96,3 +96,26 @@ This algorithm is also O(n) because although it has 2 LOOP inside, these LOOPs a
   
   4. Something more tricky
   "aaagggaaaiinnnnn" => "3a3g3a2i5n"
+
+  SET sentence = "aaagggaaaiinnnnn"
+  SET actual = ""
+  SET output = ""
+
+  FOR LOOP
+  SET char = 0 
+  Break when char > sentence.length - 1
+  Increment char by 1
+
+	  IF actual = "" THEN
+		  actual = sentence[char]
+		  count = 1
+	  ELSE IF sentence[char] = actual
+		  Increment count by 1
+	  ELSE IF sentence[char] != actual
+		  output = output + count + actual
+		  actual = sentence[char]
+		  count = 1
+
+  PRINT output
+
+This algorithm is O(n) because it only has one LOOP. The execution speed is directly proportional to the length of the input string.
